@@ -1,1 +1,1 @@
-"# CoolCake" 
+# CoolCake
