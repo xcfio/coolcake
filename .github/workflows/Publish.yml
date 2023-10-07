@@ -1,0 +1,28 @@
+name: Publish TypeScript Package with pnpm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js and pnpm
+        uses: vercel/setup-pnpm@v1
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build TypeScript package
+        run: pnpm run build
+
+      - name: Publish package to registry
+        run: pnpm publish
+        env:
+          PNPM_AUTH_TOKEN: ${{ secrets.PNPM_AUTH_TOKEN }}
