@@ -1,8 +1,17 @@
 {
     "name": "coolcake",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A library that allows to log every server activities for discord bot.",
-    "main": "index.js",
+    "author": "SoftwareX Plus <SoftwareXPlus@outlook.com>",
+    "homepage": "https://github.com/softwarexplus/CoolCake#readme",
+    "main": "out/index.js",
+    "license": "MIT",
+    "keywords": [
+        "SoftwareXPlus",
+        "SoftwareX-Plus",
+        "CoolCake",
+        "CoolIce"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -10,11 +19,16 @@
         "type": "git",
         "url": "git+https://github.com/softwarexplus/CoolCake.git"
     },
-    "keywords": [],
-    "author": "SoftwareX Plus <SoftwareXPlus@outlook.com>",
-    "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/softwarexplus/CoolCake/issues"
+        "url": "https://github.com/softwarexplus/CoolCake/issues",
+        "email": "SoftwareXPlus@outlook.com"
     },
-    "homepage": "https://github.com/softwarexplus/CoolCake#readme"
+    "funding": {
+        "type": "patreon",
+        "url": "https://www.patreon.com/SoftwareXPlus"
+    },
+    "publishConfig": {
+        "access": "public",
+        "tag": "latest"
+    }
 }
