@@ -13,6 +13,7 @@
         "CoolIce"
     ],
     "scripts": {
+        "build": "pnpx tsc",
         "deploy:package": "pnpm publish"
     },
     "repository": {
