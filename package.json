@@ -1,7 +1,7 @@
 {
     "name": "coolcake",
     "version": "0.0.2",
-    "description": "A library that allows to log every server activities for discord bot.",
+    "description": "A simple package that monitor server running time",
     "author": "SoftwareX Plus <SoftwareXPlus@outlook.com>",
     "homepage": "https://github.com/softwarexplus/CoolCake#readme",
     "main": "out/index.js",
