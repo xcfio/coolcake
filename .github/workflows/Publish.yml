@@ -8,22 +8,20 @@ jobs:
     # Build
     build:
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [15]
         steps:
-            - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
               with:
-                  version: 8
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: "pnpm"
+                  node-version: "20"
+
+            - name: Install pnpm
+              run: npm install -g pnpm
 
             - name: Install dependencies
-              run: pnpm install --no-frozen-lockfile
+              run: pnpm install
 
             - name: Build TypeScript package
               run: pnpm run build
