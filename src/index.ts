@@ -1,4 +1,2 @@
 export * from "./uptime"
-export default function Cool() {
-    return "Cool"
-}
+export * from "./type"
