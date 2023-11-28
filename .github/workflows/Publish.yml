@@ -5,8 +5,8 @@ on:
         types: [created]
 
 jobs:
-    # Build
-    build:
+    # Publish to Node Package Manager
+    Publisht-Node-Package-Manager:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -25,15 +25,11 @@ jobs:
 
             - name: Build TypeScript package
               run: pnpm run build
-    # Publish to Node Package Manager
-    publish-NodePackageManager:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
+
             - name: Publish package to registry
               run: pnpm publish
-        env:
-            NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     # Publish to Github Package Manager
     # publish-GithubPackageManager:
     #     needs: build
