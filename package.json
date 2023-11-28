@@ -27,10 +27,6 @@
         "type": "patreon",
         "url": "https://www.patreon.com/SoftwareXPlus"
     },
-    "publishConfig": {
-        "access": "public",
-        "tag": "latest"
-    },
     "devDependencies": {
         "@types/node": "^20.8.3",
         "typescript": "^5.2.2"
