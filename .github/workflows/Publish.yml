@@ -6,7 +6,7 @@ on:
 
 jobs:
     # Publish to Node Package Manager
-    Publisht-Node-Package-Manager:
+    Publish-Node-Package-Manager:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -27,7 +27,7 @@ jobs:
               run: pnpm run build
 
             - name: Publish package to registry
-              run: pnpm publish
+              run: pnpm publish --no-git-checks
               env:
                   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     # Publish to Github Package Manager
