@@ -8,19 +8,19 @@ To install CoolCake, run one of the following commands based on your preferred p
 
 #### NPM
 
-```sh
+```console
 npm install coolcake
 ```
 
 #### PNPM
 
-```sh
+```console
 pnpm add coolcake
 ```
 
 #### Yarn
 
-```sh
+```console
 yarn add coolcake
 ```
 
@@ -30,6 +30,7 @@ yarn add coolcake
 
 ```js
 import { uptime, UptimeFormat } from "coolcake"
+
 setTimeout(() => {
     console.log(uptime()) // return 1 second 2 milliseconds
     console.log(uptime(UptimeFormat.Long)) // return 1 second 2 milliseconds
@@ -41,6 +42,7 @@ setTimeout(() => {
 
 ```js
 const { uptime, UptimeFormat } = require("coolcake")
+
 setTimeout(() => {
     console.log(uptime()) // return 1 second 2 milliseconds
     console.log(uptime(UptimeFormat.Long)) // return 1 second 2 milliseconds
