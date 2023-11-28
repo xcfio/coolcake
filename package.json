@@ -1,8 +1,8 @@
 {
     "name": "coolcake",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A simple package that monitor server running time",
-    "author": "SoftwareX Plus <SoftwareXPlus@outlook.com>",
+    "author": "SoftwareX Plus <SoftwareXPlus@gmail.com>",
     "homepage": "https://github.com/softwarexplus/CoolCake#readme",
     "main": "out/index.js",
     "license": "MIT",
@@ -13,8 +13,7 @@
         "CoolIce"
     ],
     "scripts": {
-        "build": "pnpx tsc",
-        "deploy:package": "pnpm publish"
+        "build": "pnpx tsc"
     },
     "repository": {
         "type": "git",
@@ -22,7 +21,7 @@
     },
     "bugs": {
         "url": "https://github.com/softwarexplus/CoolCake/issues",
-        "email": "SoftwareXPlus@outlook.com"
+        "email": "SoftwareXPlus@gmail.com"
     },
     "funding": {
         "type": "patreon",
@@ -32,7 +31,7 @@
         "access": "public",
         "tag": "latest"
     },
-    "dependencies": {
+    "devDependencies": {
         "@types/node": "^20.8.3",
         "typescript": "^5.2.2"
     }
