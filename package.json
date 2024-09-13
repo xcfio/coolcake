@@ -1,8 +1,8 @@
 {
     "name": "coolcake",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A simple package that monitor server running time",
-    "author": "SoftwareX Plus <SoftwareXPlus@gmail.com>",
+    "author": "softwarexplus",
     "homepage": "https://github.com/softwarexplus/CoolCake#readme",
     "main": "out/index.js",
     "license": "MIT",
@@ -13,7 +13,11 @@
         "CoolIce"
     ],
     "scripts": {
-        "build": "tsc"
+        "build": "(node --eval \"require('node:fs').rmSync('out', { recursive: true, force: true })\" || true) && tsc",
+        "dev": "tsc --watch",
+        "lint": "prettier --config=.prettierrc --write src/",
+        "lint-test": "prettier --config=.prettierrc --check src/",
+        "test": "tsc --noEmit"
     },
     "repository": {
         "type": "git",
@@ -27,8 +31,8 @@
         "type": "patreon",
         "url": "https://www.patreon.com/SoftwareXPlus"
     },
-    "devDependencies": {
-        "@types/node": "^20.8.3",
-        "typescript": "^5.2.2"
+    "publishConfig": {
+        "access": "public",
+        "tag": "latest"
     }
 }

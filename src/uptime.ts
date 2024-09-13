@@ -1,46 +1,47 @@
-import { UptimeFormat } from "./type"
 const start = performance.now()
 
-export function uptime(type?: UptimeFormat | boolean | "long" | "short"): string {
-    const duration = Number((performance.now() - start).toFixed())
-    const milliseconds = parseInt(String((duration % 1000) / 100))
-    const seconds = Math.floor((duration / 1000) % 60)
-    const minutes = Math.floor((duration / (1000 * 60)) % 60)
-    const hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
-    const days = Math.floor(duration / (1000 * 60 * 60 * 24))
+export function uptime(long?: boolean): string {
+    const duration = Math.round(performance.now() - start)
+    const milliseconds = Math.round((duration % 1000) / 100)
+    const seconds = Math.round((duration / 1000) % 60)
+    const minutes = Math.round((duration / (1000 * 60)) % 60)
+    const hours = Math.round((duration / (1000 * 60 * 60)) % 24)
+    const days = Math.round(duration / (1000 * 60 * 60 * 24))
 
     let result = ""
-    if (type === UptimeFormat.Short || type === "short" || type === true) {
-        if (days > 0) {
-            result += `${days}d `
-        }
-        if (hours > 0) {
-            result += `${hours}h `
-        }
-        if (minutes > 0) {
-            result += `${minutes}m `
-        }
-        if (seconds > 0) {
-            result += `${seconds}s `
-        }
-        if (milliseconds > 0) {
-            result += `${milliseconds}ms`
+    if (long) {
+        switch (true) {
+            case days > 0:
+                result += `${days} day${days > 1 ? "s" : ""} `
+
+            case hours > 0:
+                result += `${hours} hour${hours > 1 ? "s" : ""} `
+
+            case minutes > 0:
+                result += `${minutes} minute${minutes > 1 ? "s" : ""} `
+
+            case seconds > 0:
+                result += `${seconds} second${seconds > 1 ? "s" : ""} `
+
+            case milliseconds > 0:
+                result += `${milliseconds} millisecond${milliseconds > 1 ? "s" : ""}`
         }
     } else {
-        if (days > 0) {
-            result += `${days} day${days > 1 ? "s" : ""} `
-        }
-        if (hours > 0) {
-            result += `${hours} hour${hours > 1 ? "s" : ""} `
-        }
-        if (minutes > 0) {
-            result += `${minutes} minute${minutes > 1 ? "s" : ""} `
-        }
-        if (seconds > 0) {
-            result += `${seconds} second${seconds > 1 ? "s" : ""} `
-        }
-        if (milliseconds > 0) {
-            result += `${milliseconds} millisecond${milliseconds > 1 ? "s" : ""}`
+        switch (true) {
+            case days > 0:
+                result += `${days}d `
+
+            case hours > 0:
+                result += `${hours}h `
+
+            case minutes > 0:
+                result += `${minutes}m `
+
+            case seconds > 0:
+                result += `${seconds}s `
+
+            case milliseconds > 0:
+                result += `${milliseconds}ms`
         }
     }
     return result
