@@ -1,9 +1,9 @@
 {
     "name": "coolcake",
     "version": "0.0.4",
-    "description": "A simple package that monitor server running time",
+    "description": "A package for doing some utility things",
     "author": "softwarexplus",
-    "homepage": "https://github.com/softwarexplus/CoolCake#readme",
+    "homepage": "https://github.com/softwarexplus/coolcake#readme",
     "main": "out/index.js",
     "license": "MIT",
     "keywords": [
@@ -21,10 +21,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/softwarexplus/CoolCake.git"
+        "url": "https://github.com/softwarexplus/coolcake"
     },
     "bugs": {
-        "url": "https://github.com/softwarexplus/CoolCake/issues",
+        "url": "https://github.com/softwarexplus/coolcake/issues",
         "email": "SoftwareXPlus@gmail.com"
     },
     "funding": {
@@ -34,5 +34,9 @@
     "publishConfig": {
         "access": "public",
         "tag": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "^22.5.4",
+        "typescript": "^5.6.2"
     }
 }
