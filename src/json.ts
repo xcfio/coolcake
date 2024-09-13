@@ -1,4 +1,4 @@
-import { existsSync, PathLike, readFileSync, writeFileSync } from "node:fs"
+import { existsSync, PathLike, readFileSync, rmSync, writeFileSync } from "node:fs"
 
 export function appendJSON(path: PathLike, data: object, index?: string | number) {
     if (!path) return false
@@ -6,14 +6,19 @@ export function appendJSON(path: PathLike, data: object, index?: string | number
 
     if (existsSync(path)) {
         const buffer = readFileSync(path)
-
         if (!buffer) return false
-        const rawdata = JSON.parse(buffer.toString())
 
+        const bufferData = buffer.toString()
+        if (!bufferData) {
+            rmSync(path, { recursive: true, force: true })
+            return appendJSON(path, data, index)
+        }
+
+        const rawdata = JSON.parse(bufferData)
         if (rawdata instanceof Array) {
             rawdata.push(data)
         } else {
-            index ? (rawdata[index] = data) : (rawdata[new Date().toString()] = data)
+            index ? (rawdata[index] = data) : (rawdata[new Date().toISOString()] = data)
         }
 
         const outJSON = JSON.stringify(rawdata, null, 4)
@@ -25,5 +30,3 @@ export function appendJSON(path: PathLike, data: object, index?: string | number
         return true
     }
 }
-
-function edit_compiler(path: PathLike, data: object, index?: string | number) {}

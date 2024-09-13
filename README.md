@@ -33,6 +33,8 @@ yarn add coolcake
 
 ## Uses
 
+#### Uptime
+
 ```js
 const { uptime } = require("coolcake")
 
@@ -40,4 +42,12 @@ setTimeout(() => {
     console.log(uptime()) // return 1s 2ms
     console.log(uptime(true)) // return 1 second 2 milliseconds
 }, 1200)
+```
+
+#### appendJSON
+
+```js
+const { appendJSON } = require("coolcake")
+
+appendJSON("test.json", { data: "this is important data" })
 ```

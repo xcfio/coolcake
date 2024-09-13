@@ -16,7 +16,7 @@
         "build": "(node --eval \"require('node:fs').rmSync('out', { recursive: true, force: true })\" || true) && tsc",
         "dev": "tsc --watch",
         "lint": "prettier --config=.prettierrc --write src/",
-        "lint-test": "prettier --config=.prettierrc --check src/",
+        "lint:test": "prettier --config=.prettierrc --check src/",
         "test": "tsc --noEmit"
     },
     "repository": {
