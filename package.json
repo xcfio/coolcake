@@ -1,14 +1,12 @@
 {
     "name": "coolcake",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A package for doing some utility things",
     "author": "softwarexplus",
     "homepage": "https://github.com/softwarexplus/coolcake#readme",
     "main": "out/index.js",
     "license": "MIT",
     "keywords": [
-        "SoftwareXPlus",
-        "SoftwareX-Plus",
         "CoolCake",
         "CoolIce"
     ],
@@ -29,7 +27,7 @@
     },
     "funding": {
         "type": "patreon",
-        "url": "https://www.patreon.com/SoftwareXPlus"
+        "url": "https://www.patreon.com/xcfio"
     },
     "publishConfig": {
         "access": "public",
